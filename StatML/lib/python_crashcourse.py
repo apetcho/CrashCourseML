@@ -295,3 +295,40 @@ print(f"family['kids'].remove('lisa')   => {family}")
 print(r"'youngest child is %(baby)s' % family",
     "youngest child is %(baby)s" % family)
 
+
+########
+# Sets
+########
+empty_set = set()
+print(f"empty_set       => {empty_set}")
+languages = {'python', 'r', 'java'}
+snakes = set(['cobra', 'viper', 'python'])
+print(f"languages       => {languages}")
+print(f"snakes          => {snakes}")
+print(f"len(languages)  => {len(languages)}")
+print(f"'python' in languages   => {'python' in languages}")
+# Set operations
+print(f"languages & snakes      => {languages & snakes}")
+print(f"languages | snakes      => {languages | snakes}")
+print(f"languages - snakes      => {languages - snakes}")
+print(f"snakes - languages      => {snakes - languages}")
+languages.add('sql')
+languages.add('r')
+languages.remove('java')
+print(f"languages = {languages}")
+
+try:
+    languages.remove('c')
+except KeyError as err:
+    print(f"Error: {err}")
+
+languages.discard('c')
+print(f"languages = {languages}")
+languages.pop()
+print(f"languages = {languages}")
+languages.clear()
+print(f"languages = {languages}")
+languages.update(['go', 'spark'])
+print(f"languages = {languages}")
+print(f"sorted(set([9, 0, 2, 1, 0]))    => {sorted(set([9, 0, 2, 1, 0]))}")
+
