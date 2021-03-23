@@ -368,6 +368,25 @@ def fib2(n):
 f100 = fib2(100)
 print(f100)
 
+
+# Default Arguments Values
+
+def ask_ok(prompt, retries=4, reminder='Please try again'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries -= 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+        
+_ = ask_ok("Do you really want to quit? ")
+_ = ask_ok("OK to overwrite the file? ", 2)
+_ = ask_ok("OK to overwrite the file?", 2, "Come on, only yes or no!")
+
 ###############
 # Loops
 ###############
