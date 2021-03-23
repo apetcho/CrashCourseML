@@ -241,3 +241,57 @@ print(r"'pi is {:.2f}'.format(3.14159) => ",
 print('first line\nsecond line')
 print(r"first line\nfirst line")
 
+#################
+# Dictionaries
+#################
+print("\nDictionaries:\n")
+empty_dict = {}
+# or
+empty_dict = dict()
+print(f"empty_dict =>   {empty_dict}")
+# Create a dictionary
+family = {"dad": "homer", "mom": "marge", "size": 6}
+# of
+family = dict(dad='homer', mom='marge', size=6)
+print(f"family              => {family}")
+
+# Convert a list of tuples into a dictionary
+list_of_tuples = [('dad', 'homer'), ('mom', 'marge'), ('size', 6)]
+family = dict(list_of_tuples)
+print(f"list_of_tuples      => {list_of_tuples}")
+print(f"family              => {family}")
+print(f"family['dad']       => {family['dad']}")
+print(f"len(family)         => {len(family)}")
+print(f"family.keys()       => {family.keys()}")
+print(f"family.values()     => {family.values()}")
+print(f"family.items()      => {family.items()}")
+print(f"'mom' in family     => {'mom' in family}")
+print(f"'marge' in family   => {'marge' in family}")
+family['cat'] =  'snowball'
+print(f"family['cat'] =  'snowball'     => {family}")
+family['cat'] =  'snowball ii'
+print(f"family['cat'] =  'snowball ii'  => {family}")
+del family['cat']
+print(f"del family['cat']           => {family}")
+family['kids'] = ['bart', 'lisa']
+print(f"family['kids'] = ['bart', 'lisa']   => {family}")
+_ = family.pop('dad')
+print(f"_ = family.pop('dad')       => {family}")
+
+family.update({"baby": 'maggie', 'grandpa': 'abe'})
+print(r"family.update({'baby': 'maggie', 'grandpa': 'abe'})     =>", f" {family}")
+print(f"family['mom']               => {family['mom']}\nor\n")
+print(f"family.get('mom')           => {family.get('mom')}")
+try:
+    print(f"family['grandma']       => {family['grandma']}")
+except KeyError as err:
+    print(f"Error: {err}")
+
+print(f"family.get('grandma')       => {family.get('grandma')}")
+print(f"family.get('grandma', 'not found')      => {family.get('grandma', 'not found')}")
+print(f"family['kids'][0]           => {family['kids'][0]}")
+family['kids'].remove('lisa')
+print(f"family['kids'].remove('lisa')   => {family}")
+print(r"'youngest child is %(baby)s' % family",
+    "youngest child is %(baby)s" % family)
+
