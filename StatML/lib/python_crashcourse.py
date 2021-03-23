@@ -460,7 +460,19 @@ print(f('spam'))
 ###############
 # Loops
 ###############
+words = ['cat', 'window', 'defenestrate']
+print(f"words = {words}")
+# XXX: Dangerorus. The iterable is list, thus mutable.
+# If words is being modified in the loop body, infinite copy will be made,
+# leading to computation time cost.
+for word in words:
+    print(word, len(word))
 
+# XXX Best alternative: word with a slice of the entire list
+for word in words[:]:
+    if len(word) > 6:
+        words.insert(0, word)
+print(f"words = {words}")
 
 ######################
 # List Comprehension
