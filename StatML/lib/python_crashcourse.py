@@ -383,9 +383,9 @@ def ask_ok(prompt, retries=4, reminder='Please try again'):
             raise ValueError('invalid user response')
         print(reminder)
         
-_ = ask_ok("Do you really want to quit? ")
-_ = ask_ok("OK to overwrite the file? ", 2)
-_ = ask_ok("OK to overwrite the file?", 2, "Come on, only yes or no!")
+# _ = ask_ok("Do you really want to quit? ")
+# _ = ask_ok("OK to overwrite the file? ", 2)
+# _ = ask_ok("OK to overwrite the file?", 2, "Come on, only yes or no!")
 
 
 # Keywords Arguments
@@ -403,6 +403,22 @@ parrot(action='VOOOOM', voltage=1000000)
 parrot('a million', 'bereft of life', 'jump')
 parrot("a thousand", state='pushing up the daisies')
 
+
+def cheeseshop(kind, *args, **kwargs):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    for arg in args:
+        print(arg)
+    print("-"*40)
+    for kw in kwargs:
+        print(kw, ":", kwargs[kw])
+        
+cheeseshop("Limburger", "It's very runny, sir.",
+           "It's really very, VERY runny, sir.",
+           shopkeeper="Michael Palin",
+           client="John Cleese",
+           sketch="Cheese Shop Sketch")
+           
 
 ###############
 # Loops
