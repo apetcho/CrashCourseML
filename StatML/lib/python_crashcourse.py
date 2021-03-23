@@ -332,3 +332,72 @@ languages.update(['go', 'spark'])
 print(f"languages = {languages}")
 print(f"sorted(set([9, 0, 2, 1, 0]))    => {sorted(set([9, 0, 2, 1, 0]))}")
 
+###########################################################################
+# Functions: This part is based on the official python tutorial (python3.7)
+# https://docs.python.org/3.7/tutorial/controlflow.html#defining-functions
+############################################################################
+print("\n\nFunctions\n")
+# Defining functions
+
+def fib(n):
+    """
+    Print a Fibonacci series up to n.
+    """
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+fib(2000)
+f = fib
+f(100)
+
+###
+
+def fib2(n):
+    """Return a list containing the Fibonacci series up to n."""
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a + b
+
+    return result
+
+f100 = fib2(100)
+print(f100)
+
+###############
+# Loops
+###############
+
+
+######################
+# List Comprehension
+######################
+
+######################
+# Exceptions handling
+######################
+
+#####################################
+# Basic Operating system interfaces
+#####################################
+
+#####################################
+# Object Oriented Programming (OOP)
+#####################################
+
+#############
+# Practicals
+#############
+# Exercise 1: -- functions --
+
+# Exercise 2: -- functions + list + loop --
+
+# Exercise 3: -- File I/O --
+
+# Exerices 4: -- OOP --
+
+
