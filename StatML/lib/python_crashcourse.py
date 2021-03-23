@@ -448,6 +448,15 @@ pairs.sort(key=lambda pair: pair[1])    # sort by the 2nd component of pair
 print(f"pairs = {pairs}")
 
 
+# Function Annotations
+
+def f(ham: str, eggs: str = 'eggs') -> str:
+    print("Annotations:", f.__annotations__)
+    print("Arguments:", ham, eggs)
+    return f"{ham} and {eggs}"
+
+print(f('spam'))
+
 ###############
 # Loops
 ###############
