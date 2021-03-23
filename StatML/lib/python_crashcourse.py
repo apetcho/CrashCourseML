@@ -434,6 +434,20 @@ d = {"voltage": "four million", "state": "bleedin'demised", "action": "VOOM"}
 print(concat(*planets))
 parrot(**d)
 
+# Lambda Expression
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+print(f(0))
+print(f(1))
+pairs = [(1, "one"), (2, "two"), (3, "three"), (4, "four")]
+print(f"pairs = {pairs}")
+pairs.sort(key=lambda pair: pair[1])    # sort by the 2nd component of pair
+print(f"pairs = {pairs}")
+
+
 ###############
 # Loops
 ###############
