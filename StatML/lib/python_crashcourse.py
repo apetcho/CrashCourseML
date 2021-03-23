@@ -515,8 +515,127 @@ print(f"a = {a}")
 #####################################
 # Object Oriented Programming (OOP)
 #####################################
+print("\n\n-- INTRODUCTION TO OOP --\n")
+# Scopes and Namespaces
+print("Scopes and Namespaces:")
+def scope_test():
+    def do_local():
+        spam = "local spam"
+        
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+        
+    def do_global():
+        global spam
+        spam = "global spam"
+        
+    spam = "test spam"
+    do_local()
+    print("After local assignement:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+    
+scope_test()
+print("In global scope:", spam)
 
+# A First Look at Classes
+class MyClass:
+    """A simple example class"""
+    i = 12345
+    
+    def f(self):
+        return "hello class world"
+    
+x = MyClass()
+print(x.f())
 
+class Complex:
+    
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
+        
+x = Complex(3.0, -4.5)
+print(x.r, x.i)
+
+# Class and Instance Variables
+
+class Dog:
+    
+    kind = 'canine'         # class variable
+    # tricks = []             # mistaken use of class variable
+    
+    def __init__(self, name):
+        self.name = name    # instance variable
+        self.tricks = []
+        
+    def add_trick(self, trick):
+        self.tricks.append(trick)
+        
+d = Dog('Fido')
+e = Dog('Buddy')
+print(d.kind)
+print(e.kind)
+print(d.name)
+print(e.name)
+d.add_trick('roll over')
+e.add_trick('play dead')
+print(d.tricks)
+print(e.tricks)
+
+# Private Variables
+
+class Mapping:
+    
+    def __init__(self, iterable):
+        self.items_list = []
+        self.__update(iterable)
+        
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+            
+    __update = update       # private copy of original update() method
+    
+
+class MappingSubclass(Mapping):
+    
+    def update(self, keys, values):
+        # provides new signature for update()
+        # but does not break __init__()
+        for item in zip(keys, values):
+            self.items_list.append(item)
+            
+            
+# Iterators
+
+class Reverse:
+    """Iterator for looping over a sequence backwards."""
+    
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+        
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index -= 1
+        return self.data[self.index]
+    
+print("spam")
+rev = Reverse("spam")
+print(iter(rev))
+for c in rev:
+    print(c, end='')
+
+#---------------------
+print("\n-- END OF OOP ---\n")
 ######################
 # Exceptions handling
 ######################
