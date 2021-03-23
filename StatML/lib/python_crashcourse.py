@@ -35,3 +35,15 @@ print("\nnon-empty containers and non-zeros are converted to True\n")
 print(f"bool(2)     : {bool(2)}")
 print(f"bool('two') : {bool('two')}")
 print(f"bool([2])   : {bool([2])}")
+
+### Math
+# basic operations
+print(f"10 + 4      = {10 + 4}")
+print(f"10 - 4      = {10 - 4}")
+print(f"10 * 4      = {10 * 4}")
+print(f"10 ** 4     = {10 ** 4}")
+print(f"10 / 4      = {10 / 4}")
+print(f"10/float(4) = {10 / float(4)}")
+print(f"5 % 4       = {10 % 4}")
+print(f"10 / 4      = {10 / 4}  (true division)")
+print(f"10 // 4     = {10 // 4} (floor division)")
