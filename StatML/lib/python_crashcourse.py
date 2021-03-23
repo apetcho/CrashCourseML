@@ -644,7 +644,18 @@ print(data)
 for c in reverse(data):
     print(c, end='')
     
-    
+# Generator Expressions
+print()
+x = sum(i*i for i in range(10))
+print(x)
+
+xvec = [10, 20, 30]
+yvec = [7, 5, 3]
+
+xy = sum(x*y for x, y in zip(xvec, yvec))
+print(xy)
+
+
 #---------------------
 print("\n-- END OF OOP ---\n")
 ######################
