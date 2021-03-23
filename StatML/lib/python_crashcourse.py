@@ -38,6 +38,7 @@ print(f"bool([2])   : {bool([2])}")
 
 ### Math
 # basic operations
+print("\nBasic arithmetic operations:\n")
 print(f"10 + 4      = {10 + 4}")
 print(f"10 - 4      = {10 - 4}")
 print(f"10 * 4      = {10 * 4}")
@@ -47,3 +48,17 @@ print(f"10/float(4) = {10 / float(4)}")
 print(f"5 % 4       = {10 % 4}")
 print(f"10 / 4      = {10 / 4}  (true division)")
 print(f"10 // 4     = {10 // 4} (floor division)")
+
+## Comparisons and boolean operations
+print("\nComparisons and boolean operations:\n")
+print("** Comparisons **")
+print(f"5 > 3   => {5 > 3}")
+print(f"5 >= 3  => {5 >= 3}")
+print(f"5 != 3  => {5 != 3}")
+print(f"5 == 3  => {5 == 5}")
+print("** Boolean operations **")
+print(f"(5 > 3) and (6 > 3)             => {(5 > 3) and (6 > 3)}")
+print(f"(5 > 3) or (5 < 3)              => {(5 > 3) or (5 < 3)}")
+print(f"not False                       => {not False}")
+print(f"False or not False and True     => {False or not False and True}")
+
