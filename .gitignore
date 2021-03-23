@@ -1,1 +1,3 @@
 .vscode/
+StatML/__pycache__/
+StatML/lib/__pycache__/
