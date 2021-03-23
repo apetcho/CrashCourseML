@@ -62,3 +62,29 @@ print(f"(5 > 3) or (5 < 3)              => {(5 > 3) or (5 < 3)}")
 print(f"not False                       => {not False}")
 print(f"False or not False and True     => {False or not False and True}")
 
+
+## Conditional statements
+print(f"\nConditional statements:\n")
+x = 3
+if x > 0:
+    print("positive")
+
+#
+if x > 0:
+    print('positive')
+else:
+    print('zero or negative')
+
+# if/elif/else
+if x > 0:
+    print('positive')
+elif x == 0:
+    print("zero")
+else:
+    print('negative')
+
+# single-line if statement
+if x > 0: print('positive')
+
+# single-line if/else statement, a.k.a tenary operator
+print('positive') if x > 0 else print('zero or negative')
