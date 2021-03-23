@@ -187,3 +187,57 @@ print(f"digits.index(1)             => {digits.index(1)}")
 digits = digits + (3, 4)
 print(f"digits = digits + (3, 4)    => {digits}")
 print(f"(3, 4) * 2                  => {(3, 4) * 2}")
+
+#########
+# String
+#########
+# Create a string
+s = str(42)
+print(f"s = str(42)         => {s}")
+s = "I like you"
+print(f"s = 'I like you'    => {s}")
+print(f"s[0]                => {s[0]}")
+print(f"len(s)              => {len(s)}")
+print(f"s[:6]               => {s[:6]}")
+print(f"s[7:]               => {s[7:]}")
+print(f"s[-1]               => {s[-1]}")
+print("Basic string methods:\n")
+print(f"s.lower()           => {s.lower()}")
+print(f"s.upper()           => {s.upper()}")
+print(f"s.startswith('I')   => {s.startswith('I')}")
+print(f"s.endswith('you')   => {s.endswith('you')}")
+print(f"s.isdigit()         => {s.isdigit()}")
+print(f"s.find('like')      => {s.find('like')}")
+print(f"s.find('hate')      => {s.find('hate')}")
+_ = s.replace('like', 'love')
+print(f"s.replace('like', 'love')   => {s.replace('like', 'love')}")
+print(f"s.split(' ')        => {s.split(' ')}")
+print(f"s.split()           => {s.split()}")
+s2 = "a, an, the"
+print(f"s2 = {s2}")
+print(f"s2.split(',')       => {s2.split(',')}")
+
+stooges = ['larry', 'curly', 'moe']
+print(f"stooges = {stooges}")
+print(f"' '.join(stooges)   => {' '.join(stooges)}")
+
+# Concatenate strings
+print("Concatenate strings")
+s3 = "The meaning of life is"
+s4 = '42'
+print(f"s3 = {s3}\ns4 = {s4}")
+s5 = ' ham and cheese'
+print(f"s5 = {s5}, len = {len(s5)}")
+print(f"s5.strip() = {s5.strip()}, len = {len(s5)}")
+print("\nString substitutions:\n")
+print(f"'raining %s and %s' % ('cats', 'dogs') => {'raining %s and %s' %('cats', 'dogs')}" )
+print(r"'raining {} and {}'.format('cats, 'dogs')   => ",
+    "raining {} and {}".format('cats', 'dogs'))
+print(r"'raining {arg1} and {arg2}'.format(arg1='cats', arg2='dogs')    => ",
+    "raining {arg1} and {arg2}".format(arg1='cats', arg2='dogs'))
+
+print(r"'pi is {:.2f}'.format(3.14159) => ",
+    "pi is {:.2f}".format(3.14159))
+print('first line\nsecond line')
+print(r"first line\nfirst line")
+
