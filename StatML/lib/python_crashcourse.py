@@ -507,7 +507,9 @@ print(f"squares = {squares}")
 # Dictionary comprehension
 d = {x: x**2 for x in (2, 4, 6)}
 print(f"d = {d}")
-
+# Set comprehension
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(f"a = {a}")
 
 ######################
 # Exceptions handling
