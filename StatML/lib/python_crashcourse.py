@@ -634,6 +634,17 @@ print(iter(rev))
 for c in rev:
     print(c, end='')
 
+
+def reverse(data):
+    for index in range(len(data)-1, -1, -1):
+        yield data[index]
+        
+data = "golf"
+print(data)
+for c in reverse(data):
+    print(c, end='')
+    
+    
 #---------------------
 print("\n-- END OF OOP ---\n")
 ######################
