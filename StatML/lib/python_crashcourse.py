@@ -428,6 +428,11 @@ def concat(*args, sep="/"):
 print(concat("earth", "mars", "venus"))
 print(concat("earth", "mars", "venus", sep="."))
 
+# Unpacking Arguments List
+planets = ("earth", "mars", "venus")
+d = {"voltage": "four million", "state": "bleedin'demised", "action": "VOOM"}
+print(concat(*planets))
+parrot(**d)
 
 ###############
 # Loops
