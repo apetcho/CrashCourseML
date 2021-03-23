@@ -504,7 +504,9 @@ print(f"squares = {squares}")
 # or
 squares = [x**2 for x in range(10)]
 print(f"squares = {squares}")
-
+# Dictionary comprehension
+d = {x: x**2 for x in (2, 4, 6)}
+print(f"d = {d}")
 
 
 ######################
