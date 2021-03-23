@@ -419,6 +419,15 @@ cheeseshop("Limburger", "It's very runny, sir.",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
            
+           
+# Arbitrary Argument Lists a.k.a variadics
+
+def concat(*args, sep="/"):
+    return sep.join(args)
+
+print(concat("earth", "mars", "venus"))
+print(concat("earth", "mars", "venus", sep="."))
+
 
 ###############
 # Loops
