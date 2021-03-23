@@ -88,3 +88,83 @@ if x > 0: print('positive')
 
 # single-line if/else statement, a.k.a tenary operator
 print('positive') if x > 0 else print('zero or negative')
+
+#######################
+# List data structure
+#######################
+# create an empty list
+empty_list = []         # 1st-way
+empty_list = list()     # 2nd-way
+
+# create a list
+simpsons = ["homer", "marge", "bart"]
+print(f"simpsons        = f{simpsons}")
+# examine a list
+print(f"simpsons[0]     = {simpsons[0]}")
+print(f"len(simpsons)   = {len(simpsons)}")
+# modify a list
+simpsons.append('lisa')
+print(f"simpsons.append('lisa')     => {simpsons}")
+simpsons.extend(['itchy', 'scratchy'])
+print(f"simpsons.extend(['itchy', 'scratchy'])  => {simpsons}")
+simpsons.insert(0, 'maggie')
+print(f"simpsons.insert(0, 'maggie')    => {simpsons}")
+simpsons.remove('bart')
+print(f"simpsons.remove('bart')     => {simpsons}")
+simpsons.pop(0)
+print(f"simpsons.pop(0)     => {simpsons}")
+del simpsons[0]
+print(f"del simpsons[0]     => {simpsons}")
+simpsons[0] = 'krusty'
+print(f"simpsons[0] = 'krusty'      => {simpsons}")
+
+# List slicing [start:end:stride]
+weekdays = ['mon', 'tues', 'wed', 'thurs', 'fri']
+print(f"weekdays        = {weekdays}")
+print(f"weekdays[0]     = {weekdays[0]}")
+print(f"weekdays[0:3]   = {weekdays[0:3]}")
+print(f"weekdays[:3]    = {weekdays[:3]}")
+print(f"weekdays[3:]    = {weekdays[3:]}")
+print(f"weekdays[-1]    = {weekdays[-1]}")
+print(f"weekdays[::2]   = {weekdays[::2]}")
+print(f"weekdays[::-1]  = {weekdays[::-1]}")
+print("or equivently")
+print(f"list(reversed(weekdays))  => {list(reversed(weekdays))}")
+print("sort a list inplace")
+simpsons.sort()
+print(f"simpsons.sort()     => {simpsons}")
+simpsons.sort(reverse=True)
+print(f"simpsons.sort(reverse=True)     => {simpsons}")
+simpsons.sort(key=len)
+print(f"Sort by a key: simpsons.sort(key=len)   => {simpsons}")
+print("return a sorted list")
+print(f"sorted(simpsons) => {sorted(simpsons)}")
+print(f"sorted(simpsons, reverse=true)  => {sorted(simpsons, reverse=True)}")
+print(f"sorted(simpsons, key=len)       => {sorted(simpsons, key=len)}")
+
+# create a second reference to the same list
+print("Create a second reference to the same list")
+num = [1, 2, 3]
+print(f"num = {num}")
+same_num = num
+print(f"same_num = num => {same_num}")
+same_num[0] = 0
+print("same_num[0] = 0")
+print(f"    => {same_num}")
+print(f"    => {num}")
+# copy a list
+new_num = num.copy()
+new_num = num[:]
+new_num = list(num)
+print("new_num = num.copy()")
+print(f"new_num = {new_num}")
+print(f"id(num) == id(same_num)     => {id(num) == id(same_num)}")
+print(f"id(num) == id(new_num)      => {id(num) == id(new_num)}")
+print(f"num is same_num             => {num is same_num}")
+print(f"num is new_num              => {num is new_num}")
+print(f"num == same_num             => {num == same_num}")
+print(f"num == new_num              => {num == same_num}")
+print("Concatenate (+):")
+print(f"[1, 2, 3] + [4, 5, 6]       => {[1, 2, 3] + [4, 5, 6]}")
+print("Replicate (*):")
+print(f"['a']*2 + ['b']*3           => {['a']*2 + ['b']*3}")
