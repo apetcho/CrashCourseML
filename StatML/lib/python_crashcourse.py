@@ -168,3 +168,22 @@ print("Concatenate (+):")
 print(f"[1, 2, 3] + [4, 5, 6]       => {[1, 2, 3] + [4, 5, 6]}")
 print("Replicate (*):")
 print(f"['a']*2 + ['b']*3           => {['a']*2 + ['b']*3}")
+
+
+##########
+# Tuples
+##########
+print("\n\nTuple data type:\n")
+digits = (0, 1, 'two')
+digits = tuple([0, 1, 'two'])
+zero = (0,)
+print(f"digits = (0, 1, 'two')      => {digits}")
+print(f"digits[2]                   => {digits[2]}")
+print(f"len(digits)                 => {len(digits)}")
+print(f"digits.count(0)             => {digits.count(0)}")
+print(f"digits.index(1)             => {digits.index(1)}")
+
+# concatenate tuples
+digits = digits + (3, 4)
+print(f"digits = digits + (3, 4)    => {digits}")
+print(f"(3, 4) * 2                  => {(3, 4) * 2}")
