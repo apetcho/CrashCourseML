@@ -755,7 +755,58 @@ divide(2, 0)
 #####################################
 # Basic Operating system interfaces
 #####################################
+import os
+import tempfile
 
+tmpdir = tempfile.gettempdir()
+
+# list containing the names of the entries in the directory given by path
+listdir = os.listdir(tmpdir)
+#print(listdir)
+# Get current working directory
+curdir = os.getcwd()
+print("Working directory", curdir)
+# Change the current working directory to path
+os.chdir(tmpdir)
+
+# Join paths
+mytmpdir = os.path.join(tmpdir, "foobar")
+
+# Create a directory
+if not os.path.exists(mytmpdir):
+    os.mkdir(mytmpdir)
+    
+filename = os.path.join(mytmpdir, "myfile.txt")
+print(filename)
+
+# Wrie
+lines = ["Dans python tout est bon", "Enfin, presque"]
+
+## Write line by line
+fd = open(filename, "w")
+fd.write(lines[0] + "\n")
+fd.write(lines[1] + "\n")
+fd.close()
+
+## use a context manager to automatically close your file.
+with open(filename, 'w') as f:
+    for line in lines:
+        f.write(line + '\n')
+
+
+# Read
+## read one line at a time (entire file does have to fit into memory)
+f = open(filename, "r")
+print(f.readline())     # one string per line, including newlines
+print(f.readline())
+f.close()
+
+## read the whole file at once, return a list of lines
+f = open(filename, 'r')
+print(f.readlines())
+f.close()
+
+os.chdir(curdir)
 
 #############
 # Practicals
