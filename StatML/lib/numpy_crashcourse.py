@@ -67,9 +67,32 @@ def create_2d_array_with_intrinsics():
     print(f"np.vander([1, 2, 3, 4], 2):\n\n{np.vander([1, 2, 3, 4], 2)}")
     print(f"np.vander((1, 2, 3, 4), 4):\n\n{np.vander((1, 2, 3, 4), 4)}")
 
-create_2d_array_with_intrinsics()
+#create_2d_array_with_intrinsics()
 
-## ndarrays
+## general ndarray creation functions
+
+def general_ndarray_creation():
+    # np.ones, np.zeroes, np.random.Generator.random, ...
+    print("-- np.zeros:")
+    print(f"np.zeros((2, 3)):\n{np.zeros((2, 3))}")
+    print(f"np.zeros((2, 3, 2)):\n{np.zeros((2, 3, 2))}")
+    print("-- np.ones:")
+    print(f"np.ones((2, 3)):\n{np.ones((2, 3))}")
+    print(f"np.ones((2, 3, 2)):\n{np.ones((2, 3, 2))}")
+    #import numpy.random.default_rng     # as default_rng
+    print(f"default_rng(42).random((2, 3)):\n{np.random.default_rng(42).random((2, 3))}")
+    print(f"default_rng(42).random((2, 3, 2)):\n{np.random.default_rng(42).random((2, 3, 2))}")
+    print("-- np.indices:")
+    print(f"np.indices((3, 3)):\n{np.indices((3, 3))}")
+    
+
+
+
+general_ndarray_creation()
+    
+# --
+# ndarray.ndim, ndarray.shape, ndarray.size, ndarray.dtype, ndarray.itemsize,
+# ndarray.data
 
 # 1.3 Replicating, joining, or mutating existing arrays
 # 1.4 Reading arrays from disk, either from standard or custom formats
