@@ -43,9 +43,32 @@ def nparray_creation_with_intrinsic_1d():
     print(f"\n\n{np.linspace(1., 4., 6)}")
   
 
-nparray_creation_with_intrinsic_1d()
+# nparray_creation_with_intrinsic_1d()
 
 ## 2D arrays
+
+def create_2d_array_with_intrinsics():
+    # np.eye(), np.diag(), np.vander()
+    print("-- np.eye:")
+    x = np.eye(3)
+    y = np.eye(3, 5)
+    print(f"x = {x}")
+    print(f"y = {y}")
+    print(f"-- np.diag:")
+    x = np.diag([1, 2, 3])
+    y = np.diag([1, 2,3], 1)
+    print(f"x = {x}")
+    print(f"y = {y}")
+    a = np.array([[1, 2], [3, 4]])
+    adiag = np.diag(a)
+    print(f"a = {a}\na_diag = {adiag}")
+    print(f"-- np.vander")
+    print(f"np.vander(np.linspace(0, 2, 5), 2):\n\n{np.vander(np.linspace(0, 2, 5), 2)}")
+    print(f"np.vander([1, 2, 3, 4], 2):\n\n{np.vander([1, 2, 3, 4], 2)}")
+    print(f"np.vander((1, 2, 3, 4), 4):\n\n{np.vander((1, 2, 3, 4), 4)}")
+
+create_2d_array_with_intrinsics()
+
 ## ndarrays
 
 # 1.3 Replicating, joining, or mutating existing arrays
