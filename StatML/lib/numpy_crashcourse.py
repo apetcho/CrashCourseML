@@ -86,15 +86,40 @@ def general_ndarray_creation():
     print(f"np.indices((3, 3)):\n{np.indices((3, 3))}")
     
 
-
-
-general_ndarray_creation()
+#general_ndarray_creation()
     
-# --
+# -- TODO: play with the following
 # ndarray.ndim, ndarray.shape, ndarray.size, ndarray.dtype, ndarray.itemsize,
 # ndarray.data
 
 # 1.3 Replicating, joining, or mutating existing arrays
+
+def replace_join_update():
+    a = np.array([1, 2, 3, 4, 5, 6])
+    b = a[:2]           # view
+    print("<view>")
+    print(f"a = {a}\tb = {b}")
+    b += 1
+    print(f"a = {a}\tb = {b}")
+    print("<copy>")
+    a = np.array([1, 2, 3, 4])
+    b = a[:2].copy()    # copy
+    print(f"a = {a}\tb = {b}")
+    b += 1
+    print(f"a = {a}\tb = {b}")
+    print("Join existing array: <np.hstack>, <np.vstack>, <np.block>")
+    A = np.ones((2, 2))
+    B = np.eye(2, 2)
+    C = np.zeros((2, 2))
+    D = np.diag((-3, -4))
+    print(f"A = \n{A}\n\nB = \n{B}\n\nC = \n{C}\n\nD = \n{D}")
+    txt = r"np.block([[A, B], [C, D]])"
+    block = np.block([[A, B], [C, D]])
+    print(f"\n{txt}\nblock = \n{block}\n")
+    
+
+replace_join_update()
+
 # 1.4 Reading arrays from disk, either from standard or custom formats
 # 1.5 Creating arrays from raw bytes through the use of strings or buffers
 # 1.6 Use of special library functions
