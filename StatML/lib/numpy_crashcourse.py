@@ -40,6 +40,7 @@ def nparray_creation_with_intrinsic_1d():
     y = np.arange(2, 10, dtype=float)
     z = np.arange(2, 9, 0.1)
     print(f"x = {x}\ny = {y}\nz = {z}")
+    print(f"\n\n{np.linspace(1., 4., 6)}")
   
 
 nparray_creation_with_intrinsic_1d()
