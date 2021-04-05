@@ -35,3 +35,32 @@ print(f" arr2.ndim = {arr2.ndim}")
 print(f"arr2.shape = {arr2.shape}")
 print(f" arr2.size = {arr2.size}")
 print(f" len(arr2) = {len(arr2)}")
+
+## -- Reshaping
+arr = np.arange(10, dtype=float).reshape((2, 5))
+print(f"arr = {arr}")
+print(f"arr.shape = {arr.shape}")
+print(f"arr.reshape(5, 2) = {arr.reshape((5, 2))}")
+a = np.array([0, 1])
+a_col = a[: np.newaxis]
+print(f"a = {a}\na_col = a[: np.newaxis] = {a_col}")
+a_col = a[:, None]
+print(f"a = {a}\na_col = a[:, None] = {a_col}")
+# Transpose
+print("Transpose")
+print(f"a_col.T = {a_col.T}")
+# Flatten: always returns a flat copy of the original array
+print("\n-------------------------------------------\n")
+print("np.array.flatten()")
+arr_flt = arr.flatten()
+arr_flt[0] = 33
+print(f"arr:\n{arr}")
+print(f"arr_flt:\n{arr_flt}")
+
+# Ravel: returns a view of the original array whenever possible
+print("np.array.ravel()")
+print(f"arr:\n{arr}")
+arr_flt = arr.ravel()
+arr_flt[0] = 33
+print(f"arr_flt:\n{arr_flt}")
+print(f"arr:\n{arr}")
