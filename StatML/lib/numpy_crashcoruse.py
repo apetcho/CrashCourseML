@@ -74,3 +74,13 @@ print(f"a = {a}")
 print(f"b = {b}")
 print(f"ab = np.stack((a, b)).T = {ab}")
 print(f"or\nab = np.hstack((a[:, None], b[:, None])) = {np.hstack((a[:, None], b[:, None]))}")
+
+## -- Selection
+section = lambda n, txt: print(f"{'*'*n}\n{txt}\n{'*'*n}")
+section(len("Selection"), "Selection")
+
+arr = np.arange(10, dtype=float).reshape((2, 5))
+print(f"arr:\n{arr}")
+print(f"arr[0] => {arr[0]}")
+print(f"arr[0, 3] => {arr[0, 3]}")
+print(f"arr[0][3] => {arr[0][3]}")
