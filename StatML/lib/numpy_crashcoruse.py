@@ -27,3 +27,11 @@ int_array = np.arange(5)
 float_array = int_array.astype(float)
 print(f"int_array = {int_array}")
 print(f"float_array = {float_array}")
+
+## -- Examining arrays
+print(f"arr1.dtype = {arr1.dtype}")
+print(f"arr2.dtype = {arr2.dtype}")
+print(f" arr2.ndim = {arr2.ndim}")
+print(f"arr2.shape = {arr2.shape}")
+print(f" arr2.size = {arr2.size}")
+print(f" len(arr2) = {len(arr2)}")
