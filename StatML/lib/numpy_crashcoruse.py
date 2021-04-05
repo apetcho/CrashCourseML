@@ -21,3 +21,9 @@ print(f"np.ones(10):\n{np.ones(10)}")
 print(f"np.linspace(0, 1, 5):\n{np.linspace(0, 1, 5)}")
 # 10^0 to 10^3 (inclusive) with 4 points
 print(f"np.logspace(0, 3, 4):\n{np.logspace(0, 3, 4)}")
+
+## -- arange
+int_array = np.arange(5)
+float_array = int_array.astype(float)
+print(f"int_array = {int_array}")
+print(f"float_array = {float_array}")
