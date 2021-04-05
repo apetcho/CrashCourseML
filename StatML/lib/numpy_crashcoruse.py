@@ -64,3 +64,13 @@ arr_flt = arr.ravel()
 arr_flt[0] = 33
 print(f"arr_flt:\n{arr_flt}")
 print(f"arr:\n{arr}")
+
+## Stack arrays
+# Stack flat arrays in columns
+a = np.array([0, 1])
+b = np.array([2, 3])
+ab =  np.stack((a, b)).T
+print(f"a = {a}")
+print(f"b = {b}")
+print(f"ab = np.stack((a, b)).T = {ab}")
+print(f"or\nab = np.hstack((a[:, None], b[:, None])) = {np.hstack((a[:, None], b[:, None]))}")
