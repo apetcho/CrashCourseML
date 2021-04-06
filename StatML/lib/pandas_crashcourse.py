@@ -36,3 +36,17 @@ print(f"users = user1.append(user2):\n\n{users}\n")
 
 users = pd.concat([user1, user2, user3])
 print(f"users = pd.concat([user1, user2, user3]):\n\n{users}\n")
+
+title = "Join DataFrames"
+section(title, len(title))
+
+user4 = pd.DataFrame(dict(name=['alice', 'john', 'eric', 'julie'],
+                          height=[165, 180, 175, 171]))
+print(f"user4:\n\n{user4}\n")
+
+merge_inter = pd.merge(users, user4, on='name')
+print(f"\nmerge_inter = pd.merge(users, user4, on='name'):\n{merge_inter}\n")
+
+users = pd.merge(users, user4, on='name', how='outer')
+print(f"\nusers = pd.merge(users, user4, on='name', how='outer')\n{users}\n")
+
