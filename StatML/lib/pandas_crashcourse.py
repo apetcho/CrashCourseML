@@ -73,3 +73,14 @@ print(f"users.dtypes\n{users.dtypes}\n\n")
 print(f"users.shape\n{users.shape}\n\n")
 print(f"users.values\n{users.values}\n\n")
 print(f"users.info()\n\n{users.info()}\n\n")
+
+## Columns selection
+title = "Columns selection"
+section(title, len(title))
+print(f"users['gender']\n{users['gender']}\n\n")
+print(f"type(users['gender'])\n{type(users['gender'])}\n\n")
+print(f"users.gender\n{users.gender}\n\n")
+print(f"users[['age', 'gender']]\n{users[['age', 'gender']]}\n\n")
+my_cols = ['age', 'gender']
+print(f"my_cols = ['age'. 'gender']\ntype(users[my_cols])\n{type(users[my_cols])}\n\n")
+
