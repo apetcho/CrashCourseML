@@ -60,3 +60,16 @@ print(f"\nstaked = pd.melt(users, id_vars='name', var_name='variable', value_nam
 print(f"staked.pivot(index='name', columns='variable', values='value')\n"
       f"{staked.pivot(index='name', columns='variable', values='value')}\n")
 
+## Summarizing
+title = "Summarizing"
+section(title, len(title))
+print(f"users:\n{users}\n\n")
+print(f"type(users)\n{users}\n\n")
+print(f"users.head()\n{users.head()}\n\n")
+print(f"users.tail()\n{users.tail()}\n\n")
+print(f"users.index\n{users.index}\n\n")
+print(f"users.columns\n{users.columns}\n\n")
+print(f"users.dtypes\n{users.dtypes}\n\n")
+print(f"users.shape\n{users.shape}\n\n")
+print(f"users.values\n{users.values}\n\n")
+print(f"users.info()\n\n{users.info()}\n\n")
