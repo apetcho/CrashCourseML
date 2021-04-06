@@ -174,17 +174,39 @@ print(f"df.dropna(how='all')\n{df.dropna(how='all')}\n\n")
 print(f"df.height.mean()\n{df.height.mean()}\n\n")
 
 ##-- Rename values
-title = "--- Rename values ---"
+# title = "--- Rename values ---"
+# section(title, len(title))
+
+# df = users.copy()
+# print(f"df\n{df}\n\n")
+# print(f"df.columns\n{df.columns}\n\n")
+# df.columns = ['age', 'genre', 'travail', 'nom', 'taille', 'dummy']
+# df.travail = df.travail.map({'student': 'étudiant',
+#                              'manager': 'manager',
+#                              'engineer': 'ingénieur',
+#                              'scientist': 'scientific'})
+#assert df.travail.isnull().sum() == 0
+# print(f"df['travail'].str.contains('étu|ingé')\n{df['travail'].str.contains('étu|ingé')}\n\n")
+# print(f"df:\n{df}\n\n")
+
+
+## -- Dealing with outliers
+title = "--- Dealing with outliers ---"
 section(title, len(title))
 
-df = users.copy()
-print(f"df\n{df}\n\n")
-print(f"df.columns\n{df.columns}\n\n")
-df.columns = ['age', 'genre', 'travail', 'nom', 'taille', 'dummy']
-df.travail = df.travail.map({'student': 'étudiant',
-                             'manager': 'manager',
-                             'engineer': 'ingénieur',
-                             'scientist': 'scientific'})
-#assert df.travail.isnull().sum() == 0
-print(f"df['travail'].str.contains('étu|ingé')\n{df['travail'].str.contains('étu|ingé')}\n\n")
-print(f"df:\n{df}\n\n")
+size = pd.Series(np.random.normal(loc=175, size=20, scale=10))
+print(f"size = pd.Series(np.random.normal(loc=175, size=20, scale=10))\n{size}\n\n")
+# corrupt the first 3 measures
+size[:3] = 500
+print(f"size[:3] = 500\n{size}\n\n")
+
+### Based on parametric statistic; use the mean
+title = "--- Based on parametric statistics: use the mean ---"
+section(title, len(title))
+
+size_outlr_mean = size.copy()
+print(f"size_outlr_mean = size.copy()\n{size_outlr_mean}\n\n")
+size_outlr_mean[((size - size.mean()).abs() > 3 * size.std())] = size.mean()
+print(f"size_outlr_mean[((size - size.mean()).abs() > 3 * size.std())] = size.mean()\n")
+print(f"{size_outlr_mean}\n\n")
+print(f"size_outlr_mean.mean()\n{size_outlr_mean.mean()}\n\n")
