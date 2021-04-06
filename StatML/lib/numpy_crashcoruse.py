@@ -136,3 +136,46 @@ names[names != 'Bob'] = 'Joe'
 print(f"{names}")
 print("np.unique(names)")
 print(f"{np.unique(names)}")
+
+## - Vectorized operations
+txt = "Vectorized operations"
+section(len(txt), txt)
+
+nums = np.arange(5)
+print(f"nums = {nums}")
+print(f"nums * 10 => {nums * 10}")
+nums = np.sqrt(nums)
+print(f"nums = np.sqrt(nums) => {nums}")
+print(f"np.ceil(nums) => {np.ceil(nums)}")
+print(f"np.isnan(nums) => {np.isnan(nums)}")
+print(f"nums + np.arange(5) => {nums + np.arange(5)}")
+print(f"np.maximum(nums, np.array([1, -1, 3, -4, 5])) => {np.maximum(nums, np.array([1, -2, 3, -4, 5]))}")
+
+# Compute Euclidian distance between 2 vectors
+vec1 = np.random.randn(10)
+vec2 = np.random.randn(10)
+dist = np.sqrt(np.sum((vec1 - vec2)**2))
+print(f"vec1 = {vec1}")
+print(f"vec2 = {vec2}")
+print(f"dist = {dist}")
+
+# math and stats
+rnd = np.random.randn(4, 2)
+print(f"rnd:\n{rnd}")
+print(f"rnd.mean()      => {rnd.mean()}")
+print(f"rnd.std()       => {rnd.std()}")
+print(f"rnd.argmin()    => {rnd.argmin()}")
+print(f"rnd.sum()       => {rnd.sum()}")
+print(f"rnd.sum(axis=0) => {rnd.sum(axis=0)}")
+print(f"rnd.sum(axis=1) => {rnd.sum(axis=1)}")
+
+# methods for boolean arrays
+print(f"(rnd > 0).sum() => {(rnd > 0).sum()}")
+print(f"(rnd > 0).any() => {(rnd > 0).any()}")
+print(f"(rnd > 0).all() => {(rnd > 0).all()}")
+
+# random numbers
+np.random.seed(12234)
+print(f"np.random.rand(2, 3):\n{np.random.rand(2, 3)}")
+print(f"np.random.randn(10):\n{np.random.randn(10)}")
+print(f"np.random.randint(0, 2, 10):\n{np.random.randint(0, 2, 10)}")
