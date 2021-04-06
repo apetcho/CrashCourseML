@@ -16,7 +16,7 @@ user1 = pd.DataFrame([['alice', 19, 'F', 'student'],
 user2 = pd.DataFrame([['eric', 22, 'M', 'student'],
                      ['paul', 58, 'F', 'manager']], columns=columns)
 user3 = pd.DataFrame(dict(name=['peter', 'julie'],
-                          agen=[33, 44],
+                          age=[33, 44],
                           gender=['M', 'F'],
                           job=['engineer', 'scientist']))
 print(f"\nuser1:\n{user1}")
@@ -174,20 +174,20 @@ print(f"df.dropna(how='all')\n{df.dropna(how='all')}\n\n")
 print(f"df.height.mean()\n{df.height.mean()}\n\n")
 
 ##-- Rename values
-# title = "--- Rename values ---"
-# section(title, len(title))
+title = "--- Rename values ---"
+section(title, len(title))
 
-# df = users.copy()
-# print(f"df\n{df}\n\n")
-# print(f"df.columns\n{df.columns}\n\n")
-# df.columns = ['age', 'genre', 'travail', 'nom', 'taille', 'dummy']
-# df.travail = df.travail.map({'student': 'étudiant',
-#                              'manager': 'manager',
-#                              'engineer': 'ingénieur',
-#                              'scientist': 'scientific'})
+df = users.copy()
+print(f"df\n{df}\n\n")
+print(f"df.columns\n{df.columns}\n\n")
+df.columns = ['age', 'genre', 'travail', 'nom', 'taille']
+df.travail = df.travail.map({'student': 'étudiant',
+                             'manager': 'manager',
+                             'engineer': 'ingénieur',
+                             'scientist': 'scientific'})
 #assert df.travail.isnull().sum() == 0
-# print(f"df['travail'].str.contains('étu|ingé')\n{df['travail'].str.contains('étu|ingé')}\n\n")
-# print(f"df:\n{df}\n\n")
+print(f"df['travail'].str.contains('étu|ingé')\n{df['travail'].str.contains('étu|ingé')}\n\n")
+print(f"df:\n{df}\n\n")
 
 
 ## -- Dealing with outliers
@@ -221,4 +221,21 @@ print(f"size_outlr_mad\n{size_outlr_mad}\n\n")
 size_outlr_mad[((size - size.median()).abs() > 3 * mad)] = size.median()
 print("size_outlr_mad.mean(), size_outlr_mad.median(): ", end=' ')
 print(size_outlr_mad.mean(), size_outlr_mad.median(), "\n")
+
+## FILE I/O
+title = "File I/O"
+section(title, len(title))
+
+import tempfile
+import os.path
+
+## -- csv
+title = "--- csv ---"
+section(title, len(title))
+tmpdir = tempfile.gettempdir()
+csv_filename = os.path.join(tmpdir, "users.csv")
+users.to_csv(csv_filename, index=False)
+other = pd.read_csv(csv_filename)
+
+print(f"other\n{other}\n\n")
 
