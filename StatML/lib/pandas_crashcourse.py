@@ -239,3 +239,27 @@ other = pd.read_csv(csv_filename)
 
 print(f"other\n{other}\n\n")
 
+## -- Read csv from url
+title = "--- Read csv from url ---"
+section(title, len(title))
+url = 'https://raw.github.com/neurospin/pystatsml/master/datasets/salary_table.csv'
+salary = pd.read_csv(url)
+print(f"salary = pd.read_csv(url)\n{salary}\n\n")
+
+## Excel
+title = "--- Excel ---"
+section(title, len(title))
+xls_filename = os.path.join(tmpdir, "users.xlsx")
+users.to_excel(xls_filename, sheet_name='users', index=False)
+xlsdata = pd.read_excel(xls_filename, sheet_name="users")
+print(f"xsldata\n{xlsdata}\n\n")
+
+# Multiple sheets
+with pd.ExcelWriter(xls_filename) as writer:
+    users.to_excel(writer, sheet_name='users', index=False)
+    df.to_excel(writer, sheet_name='salary', index=False)
+    
+usersdata = pd.read_excel(xls_filename, sheet_name='users')
+salarydata = pd.read_excel(xls_filename, sheet_name='salary')
+print(f"userdata\n{usersdata}\n\nsalarydata\n{salarydata}\n\n")
+
