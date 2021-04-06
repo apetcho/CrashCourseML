@@ -143,7 +143,7 @@ for grp, data in df.groupby('job'):
 ## Quality check
 title = "Quality check"
 section(title, len(title))
-##-- Remve duplicate data
+##-- Remove duplicate data
 title = "--- Remove duplicate data ---"
 section(title, len(title))
 df = users.append(df.iloc[0], ignore_index=True)
@@ -155,4 +155,21 @@ print(f"df.age.duplicated()\n{df.age.duplicated()}\n\n")
 print(f"df.duplicated(['age', 'gender']).sum()\n{df.duplicated(['age', 'gender']).sum()}\n\n")
 df = df.drop_duplicates()
 print(f"df = df.drop_duplicates()\n{df}\n\n")
+
+##-- Missing data
+title = "--- Missing data ---"
+section(title, len(title))
+
+print(f"df = users.copy()\n{df}\n\n")
+print(f"df.describe(include='all')\n{df.describe(include='all')}")
+print(f"df.height.isnull()\n{df.height.isnull()}\n\n")
+print(f"df.height.notnull()\n{df.height.notnull()}\n\n")
+print(f"df[df.height.notnull()]\n{df[df.height.notnull()]}\n\n")
+print(f"df.height.isnull().sum()\n{df.height.isnull().sum()}\n\n")
+
+print(f"df.isnull()\n{df.isnull()}\n\n")
+print(f"df.isnull().sum()\n{df.isnull().sum()}\n\n")
+print(f"df.dropna()\n{df.dropna()}\n\n")
+print(f"df.dropna(how='all')\n{df.dropna(how='all')}\n\n")
+print(f"df.height.mean()\n{df.height.mean()}\n\n")
 
