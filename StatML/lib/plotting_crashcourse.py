@@ -42,9 +42,24 @@ def scatter_2d_plots():
     plt.title("Scatter 2D Plot")
     plt.show()
 
+
+@title("Plotting with keyword strings")
+def plotting_with_keyword_strings():
+    data = {'a': np.arange(50),
+            'c': np.random.randint(0, 50, 50),
+            'd': np.random.randn(50)}
+    data['b'] = data['a'] + 10*np.random.randn(50)
+    data['d'] = np.abs(data['d']) * 100
+    plt.scatter('a', 'b', c='c', s='d', data=data)
+    plt.xlabel('entry a')
+    plt.ylabel('entry b')
+    plt.show()    
+
+
 def main():
     # basic_plot()
-    scatter_2d_plots()
+    # scatter_2d_plots()
+    plotting_with_keyword_strings()
     
     
 if __name__ == "__main__":
