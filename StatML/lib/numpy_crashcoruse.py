@@ -84,3 +84,55 @@ print(f"arr:\n{arr}")
 print(f"arr[0] => {arr[0]}")
 print(f"arr[0, 3] => {arr[0, 3]}")
 print(f"arr[0][3] => {arr[0][3]}")
+
+# Slicing
+txt = "Slicing"
+section(len(txt), txt)
+print(f"arr[0, :] => {arr[0, :]}")
+print(f"arr[:, 0] => {arr[:, 0]}")
+print(f"arr[:, :2] => {arr[:, :2]}")
+print(f"arr[:, 2:] => {arr[:, 2:]}")
+arr2 = arr[:, 1:4]
+print(f"arr2 = arr[:, 1:4] =>\n{arr2}")
+print(f"arr =>\n{arr}")
+arr2[0, 0] = 33
+print(f"After arr2[0, 0] = 33")
+print(f"arr2 =>\n{arr2}")
+print(f"arr =>\n{arr}")
+print(f"Row 0: {arr[0, :]}")
+print(f"Row 0 in reverse order: {arr[0, ::-1]}")
+
+# -- Fancy indexing: Integer or bollean array indexing
+txt = "Fancy indexing: Integer or bollean array indexing"
+section(len(txt), txt)
+arr2 = arr[:, [1, 2, 3]]
+print(f"arr =>\n{arr}")
+print("\narr2 = arr[:, [1, 2, 3]]\n")
+print(f"arr2 =>\n{arr2}")
+arr2[0, 0] = 44
+print("After arr2[0,0] = 44")
+print(f"arr2 =>\n{arr2}\narr =>\n{arr}")
+
+print("\nBoolean arrays indexing\n")
+arr2 = arr[arr > 5]
+print(f"arr2 =>{arr2}")
+arr2[0] = 44
+print(f"arr2 = {arr2}")
+print(f"arr =>\n{arr}")
+
+arr[arr > 5] = 0
+print("After arr[arr > 5] = 0")
+print(f"arr =>\n{arr}")
+
+#
+names = np.array(["Bob", "Joe", "Will", "Bob"])
+print(f"names = {names}")
+print(f"names == 'Bob' => {names == 'Bob'}")
+print(f"names[names != 'Bob'] => {names[names != 'Bob']}")
+print("(names == 'Bob') | (names == 'Will') => ")
+print(f"{(names == 'Bob') | (names == 'Will')}")
+print("names[names != 'Bob'] = 'Joe' =>")
+names[names != 'Bob'] = 'Joe'
+print(f"{names}")
+print("np.unique(names)")
+print(f"{np.unique(names)}")
