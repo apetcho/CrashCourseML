@@ -179,3 +179,16 @@ np.random.seed(12234)
 print(f"np.random.rand(2, 3):\n{np.random.rand(2, 3)}")
 print(f"np.random.randn(10):\n{np.random.randn(10)}")
 print(f"np.random.randint(0, 2, 10):\n{np.random.randint(0, 2, 10)}")
+
+
+## -- Broadcasting
+txt = "Broadcasting"
+section(len(txt), txt)
+
+a = np.array([
+    [ 0,  0,  0],
+    [10, 10, 10],
+    [20, 20, 20],
+    [30, 30, 30]])
+b = np.array([0, 1, 2])
+print(f"a:\n{a}\nb:\n{b}\na+b:\n{a+b}")
