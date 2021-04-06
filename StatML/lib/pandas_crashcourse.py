@@ -173,3 +173,18 @@ print(f"df.dropna()\n{df.dropna()}\n\n")
 print(f"df.dropna(how='all')\n{df.dropna(how='all')}\n\n")
 print(f"df.height.mean()\n{df.height.mean()}\n\n")
 
+##-- Rename values
+title = "--- Rename values ---"
+section(title, len(title))
+
+df = users.copy()
+print(f"df\n{df}\n\n")
+print(f"df.columns\n{df.columns}\n\n")
+df.columns = ['age', 'genre', 'travail', 'nom', 'taille', 'dummy']
+df.travail = df.travail.map({'student': 'étudiant',
+                             'manager': 'manager',
+                             'engineer': 'ingénieur',
+                             'scientist': 'scientific'})
+#assert df.travail.isnull().sum() == 0
+print(f"df['travail'].str.contains('étu|ingé')\n{df['travail'].str.contains('étu|ingé')}\n\n")
+print(f"df:\n{df}\n\n")
