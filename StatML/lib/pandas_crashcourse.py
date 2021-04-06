@@ -124,3 +124,18 @@ print(f"df.sort_values(by='age')\n{df.sort_values(by='age')}\n\n")
 print(f"df.sort_values(by='age', ascending=False)\n{df.sort_values(by='age', ascending=False)}\n\n")
 df.sort_values(by=['job', 'age'], inplace=True)
 print(f"df.sort_values(by=['job', 'age'], inplace=True)\n{df}\n\n")
+
+
+## Descriptive statistics
+title = "Descriptive statistics"
+section(title, len(title))
+print(f"df.describe()\n{df.describe()}\n\n")
+print(f"df.describe(include='all')\n{df.describe(include='all')}\n\n")
+print(f"df.describe(include=['object'])\n{df.describe(include=['object'])}\n\n")
+print(f"df.groupby('job').mean()\n{df.groupby('job').mean()}\n\n")
+print(f"df.groupby('job')['age'].mean()\n{df.groupby('job')['age'].mean()}\n\n")
+print(f"df.groupby('job').describe(include='all')\n{df.groupby('job').describe(include='all')}\n\n")
+print("\nGouby in a loop\n\n")
+for grp, data in df.groupby('job'):
+    print(grp, data)
+    
