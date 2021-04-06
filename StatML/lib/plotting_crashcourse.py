@@ -22,8 +22,14 @@ def title(msg):
 def basic_plot():
     x = np.linspace(0, 10, 50)
     y = np.sin(x)
+    z = np.cos(x)
     plt.figure()
-    plt.plot(x, y, 'o')
+    plt.plot(x, y, label='sinus', color='blue', linestyle='--', linewidth=2)
+    plt.plot(x, z, label='cosinus', color='red', linestyle='--', linewidth=2)
+    plt.xlabel("x label")
+    plt.ylabel("y label")
+    plt.title("Title")
+    plt.legend()
     plt.show()
     
 
