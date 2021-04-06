@@ -37,6 +37,7 @@ print(f"users = user1.append(user2):\n\n{users}\n")
 users = pd.concat([user1, user2, user3])
 print(f"users = pd.concat([user1, user2, user3]):\n\n{users}\n")
 
+## -- Join DataFrames
 title = "Join DataFrames"
 section(title, len(title))
 
@@ -49,4 +50,13 @@ print(f"\nmerge_inter = pd.merge(users, user4, on='name'):\n{merge_inter}\n")
 
 users = pd.merge(users, user4, on='name', how='outer')
 print(f"\nusers = pd.merge(users, user4, on='name', how='outer')\n{users}\n")
+
+## -- Reshaping by pivoting
+title = "Reshaping by pivoting"
+section(title, len(title))
+staked = pd.melt(users, id_vars='name', var_name='variable', value_name='value')
+print(f"\nstaked = pd.melt(users, id_vars='name', var_name='variable', value_name='value')\n{staked}\n")
+
+print(f"staked.pivot(index='name', columns='variable', values='value')\n"
+      f"{staked.pivot(index='name', columns='variable', values='value')}\n")
 
