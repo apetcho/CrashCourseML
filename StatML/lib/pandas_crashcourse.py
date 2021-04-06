@@ -138,4 +138,21 @@ print(f"df.groupby('job').describe(include='all')\n{df.groupby('job').describe(i
 print("\nGouby in a loop\n\n")
 for grp, data in df.groupby('job'):
     print(grp, data)
-    
+
+
+## Quality check
+title = "Quality check"
+section(title, len(title))
+##-- Remve duplicate data
+title = "--- Remove duplicate data ---"
+section(title, len(title))
+df = users.append(df.iloc[0], ignore_index=True)
+print(f"df = users.append(df.iloc[0], ignore_index=True)\n{df}\n\n")
+print(f"df.duplicated()\n{df.duplicated()}\n\n")
+print(f"df.duplicated().sum()\n{df.duplicated().sum()}\n\n")
+print(f"df[df.duplicated()]\n{df[df.duplicated()]}\n\n")
+print(f"df.age.duplicated()\n{df.age.duplicated()}\n\n")
+print(f"df.duplicated(['age', 'gender']).sum()\n{df.duplicated(['age', 'gender']).sum()}\n\n")
+df = df.drop_duplicates()
+print(f"df = df.drop_duplicates()\n{df}\n\n")
+
