@@ -84,3 +84,31 @@ print(f"users[['age', 'gender']]\n{users[['age', 'gender']]}\n\n")
 my_cols = ['age', 'gender']
 print(f"my_cols = ['age'. 'gender']\ntype(users[my_cols])\n{type(users[my_cols])}\n\n")
 
+## Rows selection (basic)
+title = "Basic rows selection"
+section(title, len(title))
+
+df = users.copy()
+print(f"df = users.copy()\n{df}\n\n")
+print(f"df.iloc[0]\n{df.iloc[0]}\n\n")
+print(f"df.iloc[0, 0]\n{df.iloc[0, 0]}\n\n")
+df.iloc[0, 0] = 55
+print(f"df.iloc[0, 0] = 55\n{df}\n\n")
+for i in range(users.shape[0]):
+    row = df.iloc[i]
+    row.age *= 10
+    
+print("After looping over rows")
+print(f"df\n{df}\n\n")
+
+## Rows selection (filtering)
+title = "Rows selection (filtering)"
+section(title, len(title))
+
+print(f"users[users.age < 20]\n{users[users.age < 20]}\n\n")
+young_bool = users.age < 20
+young = users[young_bool]
+young_job = young.job
+print(f"young_bool = users.age < 20\n{young_bool}\n")
+print(f"young = users[young_bool]\n{young}\n\n")
+print(f"young_job = young.job\n{young_job}\n\n")
