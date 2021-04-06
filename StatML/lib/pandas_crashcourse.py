@@ -112,3 +112,15 @@ young_job = young.job
 print(f"young_bool = users.age < 20\n{young_bool}\n")
 print(f"young = users[young_bool]\n{young}\n\n")
 print(f"young_job = young.job\n{young_job}\n\n")
+
+## Sorting
+title = "Sorting"
+section(title, len(title))
+
+df = users.copy()
+print(f"df = users.copy()\n{df}\n\n")
+print(f"df.age.sort_values()\n{df.age.sort_values()}\n\n")
+print(f"df.sort_values(by='age')\n{df.sort_values(by='age')}\n\n")
+print(f"df.sort_values(by='age', ascending=False)\n{df.sort_values(by='age', ascending=False)}\n\n")
+df.sort_values(by=['job', 'age'], inplace=True)
+print(f"df.sort_values(by=['job', 'age'], inplace=True)\n{df}\n\n")
