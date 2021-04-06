@@ -210,3 +210,15 @@ size_outlr_mean[((size - size.mean()).abs() > 3 * size.std())] = size.mean()
 print(f"size_outlr_mean[((size - size.mean()).abs() > 3 * size.std())] = size.mean()\n")
 print(f"{size_outlr_mean}\n\n")
 print(f"size_outlr_mean.mean()\n{size_outlr_mean.mean()}\n\n")
+
+## -- Based on non-parametric statistics; use the median
+title = "--- Based on non-parametric statistics: use the median ---"
+section(title, len(title))
+
+mad = 1.482 * np.median(np.abs(size - size.median()))   # Median absolute deviation
+size_outlr_mad = size.copy()
+print(f"size_outlr_mad\n{size_outlr_mad}\n\n")
+size_outlr_mad[((size - size.median()).abs() > 3 * mad)] = size.median()
+print("size_outlr_mad.mean(), size_outlr_mad.median(): ", end=' ')
+print(size_outlr_mad.mean(), size_outlr_mad.median(), "\n")
+
