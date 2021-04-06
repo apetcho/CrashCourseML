@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from functools import wraps
 
@@ -35,11 +36,15 @@ def basic_plot():
 
 @title("Scatter 2D Plots")
 def scatter_2d_plots():
-    pass
-
+    np.random.seed(2021)
+    data = np.random.randn(2, 100)
+    plt.scatter(data[0], data[1])
+    plt.title("Scatter 2D Plot")
+    plt.show()
 
 def main():
-    basic_plot()
+    # basic_plot()
+    scatter_2d_plots()
     
     
 if __name__ == "__main__":
