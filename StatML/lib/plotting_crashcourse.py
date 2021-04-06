@@ -53,13 +53,29 @@ def plotting_with_keyword_strings():
     plt.scatter('a', 'b', c='c', s='d', data=data)
     plt.xlabel('entry a')
     plt.ylabel('entry b')
-    plt.show()    
+    plt.show()
+    
+
+@title("Plotting with categorial variables")
+def plotting_with_categorial_variables():
+    names = ['group_a', 'group_b', 'group_c']
+    values = [1, 10, 100]
+    plt.figure(figsize=(9, 3))
+    plt.subplot(131)
+    plt.bar(names, values)
+    plt.subplot(132)
+    plt.scatter(names, values)
+    plt.subplot(133)
+    plt.plot(names, values)
+    plt.suptitle('Categorial Plotting')
+    plt.show()  
 
 
 def main():
     # basic_plot()
     # scatter_2d_plots()
-    plotting_with_keyword_strings()
+    # plotting_with_keyword_strings()
+    plotting_with_categorial_variables()
     
     
 if __name__ == "__main__":
