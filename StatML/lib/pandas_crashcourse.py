@@ -263,3 +263,34 @@ usersdata = pd.read_excel(xls_filename, sheet_name='users')
 salarydata = pd.read_excel(xls_filename, sheet_name='salary')
 print(f"userdata\n{usersdata}\n\nsalarydata\n{salarydata}\n\n")
 
+## SQL (SQLite)
+#title = "--- SQL (SQLite) ---"
+#section(title, len(title))
+#import sqlite3
+
+
+#db_filename = os.path.join(tmpdir, "users.db")
+#conn = sqlite3.connect(db_filename)
+#salary = pd.read_csv(url)
+#salary.to_sql('salary', conn, if_exists='replace')
+
+#cur = conn.cursor()
+#values = (100, 14000, 5, 'Bachelor', 'N')
+#cur.execute("INSERT INTO salary VALUES(?, ?, ?, ?, ?)", values)
+#conn.commit()
+
+#salary_sql = pd.read_sql_query("SELECT * FROM salary;", conn)
+#print(f"salary_sql.header()\n{salary_sql.header()}\n\n")
+
+#salary_sql = pd.read_sql_query("SELECT * FROM salary;", conn)
+#print(f"\n{salary_sql.tail()}\n\n")
+#print('pd.read_sql_query("SELECT * FROM salary WHERE salary>25000;", conn)'
+#      f'\n{pd.read_sql_query("SELECT * FROM salary WHERE salary>25000;", conn)}\n\n')
+#print('pd.read_sql_query("SELECT * FROM salary WHERE experience=16;", conn)'
+#      f'\n{pd.read_sql_query("SELECT * FROM salary WHERE experience=16;", conn)}\n\n')
+#print(r"""pd.read_sql_query('SELECT * FROM salary WHERE education="Master";', conn)""",
+#      '\n',
+#      pd.read_sql_query('SELECT * FROM salary WHERE education="Master";', conn),
+#      '\n\n')
+#cur.close()
+#conn.close()
