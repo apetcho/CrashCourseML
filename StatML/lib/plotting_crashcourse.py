@@ -71,12 +71,30 @@ def plotting_with_categorial_variables():
     plt.show()  
 
 
+@title("Working with text")
+def working_with_text():
+    mu, sigma = 100, 15
+    np.random.seed(2021)
+    x = mu + sigma * np.random.randn(10000)
+    # the histogram of the data
+    n, bins, patches = plt.hist(x, 50, density=1, facecolor='g', alpha=0.75)
+    
+    plt.xlabel('Smarts')
+    plt.ylabel('Probability')
+    plt.title('Historgram of IQ')
+    plt.text(60, 0.025, r'$\mu=100,\ \sigma=15$')
+    plt.axis([40, 160, 0, 0.03])
+    plt.grid(True)
+    plt.show()
+
+
 def main():
     # basic_plot()
     # scatter_2d_plots()
     # plotting_with_keyword_strings()
-    plotting_with_categorial_variables()
-    
+    # plotting_with_categorial_variables()
+    working_with_text()
+        
     
 if __name__ == "__main__":
     main()
