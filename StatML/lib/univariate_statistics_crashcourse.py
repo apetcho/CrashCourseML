@@ -81,6 +81,19 @@ def fisher_distribution():
 ## - Fit: estimate the model parameters
 ## - Test
 
+TITLE = "Hypothesis Testing:\nExample of testing the mean height of population."
+@title(TITLE+'\nOne sample t-test')
+def one_sample_t_test():
+    x = [1.83, 1.83, 1.73, 1.82, 1.83, 1.73, 1.99, 1.85, 1.68, 1.87]
+    xbar = np.mean(x)           # sample mean
+    mu0 = 1.75                  # hypothesized value
+    s = np.std(x, ddof=1)       # sample standard deviation
+    n = len(x)
+    
+    tobs = (xbar - mu0) / (s/np.sqrt(n))
+    print(f"T-Statistics:\n\ttobs = {tobs}")
+    
+
 # Testing pairwise associations
 ## Pearson correlation test: test association between two quantitative variables
 ## Two sample (Student) t-test: compare two means
@@ -129,9 +142,11 @@ def main():
     normal_distribution()
     # Fisher's F-distribution
     fisher_distribution()
-    
+    # One sample t-test
     plt.show()
     
     
 if __name__ == "__main__":
-    main()
+    # main()
+    # Example One sample t-test
+    one_sample_t_test()
