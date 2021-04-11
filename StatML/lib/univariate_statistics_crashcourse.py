@@ -38,12 +38,43 @@ def normal_distribution():
     sigma = np.sqrt(variance)   # standard deviation
     x = np.linspace(mu-3*variance, mu+3*variance, 100)
     y = stats.norm.pdf(x, mu, sigma)
+    plt.figure()
     plt.plot(x, y)
+    plt.title("Normal distribution")
     
     
 ## [2.2] Chi-Square distribution
 ## [2.3] Fisher's F-distribution
 
+@title("Fisher's F-distribution")
+def fisher_distribution():
+    fisher = stats.f
+    
+    fvalues = np.linspace(.1, 5, 100)
+    plt.figure()
+    # pdf(x, df1, df2): Probability densitiy function at x of F.
+    plt.plot(fvalues, fisher.pdf(fvalues, 1, 30), 'b-', label='F(1, 30)')
+    plt.plot(fvalues, fisher.pdf(fvalues, 5, 30), 'r-', label='F(5, 30)')
+    plt.legend()
+    plt.title("Fisher's F-distribution")
+    
+    # cdf(x, df1, df2): Cummulative distribution function of F
+    proba_at_f_inf_3 = fisher.cdf(3, 1, 30)     # P(F(1, 30) < 30)
+    
+    # ppf(q, df1, df2): Percent point function (inverse of cdf) at q of F.
+    f_at_proba_inf_95 = fisher.ppf(.95, 1, 30)  # q such P(F(1, 30) < .95)
+    assert fisher.cdf(f_at_proba_inf_95, 1, 30) == .95
+    
+    # sf(x, df1, df2): Survival function (1 - cdf) at x of F
+    proba_at_f_sup_3 = fisher.sf(3, 1, 30)      # P(F(1, 30) > 3)
+    assert proba_at_f_inf_3 + proba_at_f_sup_3 == 1
+    
+    # p-value: P(F(1, 30)) < 0.05
+    low_proba_fvalues = fvalues[fvalues > f_at_proba_inf_95]
+    plt.fill_between(low_proba_fvalues, 0, fisher.pdf(low_proba_fvalues, 1, 30),
+                     alpha=.8, label='P < 0.05')
+    
+    
 # Hypothesis Testing
 ## One sample t-test
 ## - Model the data
@@ -96,6 +127,8 @@ def normal_distribution():
 def main():
     # Normal distribution
     normal_distribution()
+    # Fisher's F-distribution
+    fisher_distribution()
     
     plt.show()
     
