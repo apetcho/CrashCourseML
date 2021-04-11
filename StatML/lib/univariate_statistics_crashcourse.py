@@ -1,17 +1,37 @@
 #!/usr/bin/env python3
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
 
-# Estimators of the main statistical measures
-## Mean
-## Variance
-## Standard deviation
-## Covariance
-## Correlation
-## Standard Error (SE)
 
-# Main Distributions
-## Normal Distribution
-## Chi-Square distribution
-## Fisher's F-distribution
+def title(msg):
+    def decorate(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            n = len(msg)
+            dash = '*' * n
+            print(f"\n{dash}\n{msg}\n{dash}\n\n")
+            ans = func(*args, **kwargs)
+            if ans is None:
+                return
+            return ans
+        return wrapper
+    return decorate
+
+# [1] Estimators of the main statistical measures
+## [1.1] Mean
+## [1.2] Variance
+## [1.3] Standard deviation
+## [1.4] Covariance
+## [1.5] Correlation
+## [1.6] Standard Error (SE)
+
+# [2] Main Distributions
+## [2.1] Normal Distribution
+
+
+## [2.2] Chi-Square distribution
+## [2.3] Fisher's F-distribution
 
 # Hypothesis Testing
 ## One sample t-test
