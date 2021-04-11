@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+from functools import wraps
 import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
+
 
 
 def title(msg):
@@ -29,7 +31,16 @@ def title(msg):
 # [2] Main Distributions
 ## [2.1] Normal Distribution
 
-
+@title("Normal distribution")
+def normal_distribution():
+    mu = 0                      # mean
+    variance = 2                # variance
+    sigma = np.sqrt(variance)   # standard deviation
+    x = np.linspace(mu-3*variance, mu+3*variance, 100)
+    y = stats.norm.pdf(x, mu, sigma)
+    plt.plot(x, y)
+    
+    
 ## [2.2] Chi-Square distribution
 ## [2.3] Fisher's F-distribution
 
@@ -81,3 +92,13 @@ def title(msg):
 ## The False discovery rate (FDR) correction for multiple comparisons
 ## Brain volume study
 
+
+def main():
+    # Normal distribution
+    normal_distribution()
+    
+    plt.show()
+    
+    
+if __name__ == "__main__":
+    main()
