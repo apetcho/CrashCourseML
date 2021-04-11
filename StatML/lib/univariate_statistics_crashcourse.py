@@ -93,6 +93,22 @@ def one_sample_t_test():
     tobs = (xbar - mu0) / (s/np.sqrt(n))
     print(f"T-Statistics:\n\ttobs = {tobs}")
     
+    
+    _TITLE = "Hypothesis Testing:\nPlotting p-value on graph"
+
+    @title(_TITLE)
+    def plotting_pvalue_t_test():
+        # n = len(x)
+        # tobs = 2.39687663116        # assume the t-value (as computed above)
+        tvalues = np.linspace(-10, 10, 100)
+        plt.plot(tvalues, stats.t.pdf(tvalues, n-1), 'b-', label='T(n-1)')
+        upper_tval_tvalues = tvalues[tvalues > tobs]
+        plt.fill_between(upper_tval_tvalues, 0, stats.t.pdf(upper_tval_tvalues, n-1),
+                         alpha=.8, label='p-value')
+        plt.legend()
+    plotting_pvalue_t_test()
+    
+    
 
 # Testing pairwise associations
 ## Pearson correlation test: test association between two quantitative variables
@@ -139,14 +155,17 @@ def one_sample_t_test():
 
 def main():
     # Normal distribution
-    normal_distribution()
+    # normal_distribution()
+    
     # Fisher's F-distribution
-    fisher_distribution()
+    # fisher_distribution()
+    
     # One sample t-test
+    one_sample_t_test()
     plt.show()
     
     
 if __name__ == "__main__":
-    # main()
+    main()
     # Example One sample t-test
-    one_sample_t_test()
+    # one_sample_t_test()
